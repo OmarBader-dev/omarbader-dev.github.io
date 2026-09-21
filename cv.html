@@ -1,0 +1,216 @@
+<title>Omar Bader CV</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Archivo:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap">
+<style>
+  :root{
+    --paper:#FBF9F4;
+    --backdrop:#E4E1D9;
+    --ink:#201F1B;
+    --ink-2:#5F5C53;
+    --ink-3:#8C897E;
+    --line:#E4DFD4;
+    --line-2:#D8D2C5;
+    --accent:#33504B;   /* patina */
+    --bronze:#8F6C3B;
+    --font-display:"Fraunces", Georgia, "Times New Roman", serif;
+    --font-sans:"Archivo", system-ui, -apple-system, Segoe UI, sans-serif;
+    --font-mono:"Space Mono", ui-monospace, Menlo, monospace;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;background:var(--backdrop);color:var(--ink);
+    font-family:var(--font-sans);
+    padding:26px 16px;
+    -webkit-font-smoothing:antialiased;
+  }
+  .sheet{
+    width:min(8.5in, 100%);
+    min-height:11in;
+    margin:0 auto;
+    background:var(--paper);
+    padding:0.55in 0.6in 0.5in;
+    box-shadow:0 1px 2px rgba(32,31,27,.05), 0 30px 70px -40px rgba(32,31,27,.4);
+    position:relative;
+  }
+  a{color:inherit;text-decoration:none;}
+
+  /* ---- masthead ---- */
+  .head{border-bottom:1px solid var(--line-2);padding-bottom:16px;}
+  .name{font-family:var(--font-display);font-optical-sizing:auto;font-weight:400;font-size:40px;line-height:1;letter-spacing:-.01em;}
+  .role{font-family:var(--font-mono);font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--accent);margin-top:11px;}
+  .contact{display:flex;flex-wrap:wrap;gap:6px 16px;margin-top:15px;}
+  .contact a,.contact span{font-size:11px;color:var(--ink-2);display:inline-flex;align-items:center;gap:7px;}
+  .contact .k{font-family:var(--font-mono);font-size:8.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-3);}
+  .contact a:hover{color:var(--accent);}
+
+  /* ---- body grid ---- */
+  .grid{display:grid;grid-template-columns:1.72fr 1fr;gap:34px;margin-top:22px;}
+  .lbl{font-family:var(--font-mono);font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-3);padding-bottom:7px;border-bottom:1px solid var(--line);margin-bottom:13px;}
+
+  .profile{font-size:11.5px;line-height:1.62;color:var(--ink-2);}
+  .profile b{color:var(--ink);font-weight:600;}
+
+  .exp{display:flex;flex-direction:column;gap:17px;}
+  .job-h{display:flex;justify-content:space-between;align-items:baseline;gap:14px;flex-wrap:wrap;}
+  .job-t{font-family:var(--font-display);font-size:15px;font-weight:500;line-height:1.15;}
+  .job-org{color:var(--accent);font-weight:500;}
+  .job-m{font-family:var(--font-mono);font-size:9px;letter-spacing:.06em;color:var(--ink-3);white-space:nowrap;}
+  .job ul{margin:8px 0 0;padding:0;list-style:none;display:flex;flex-direction:column;gap:5px;}
+  .job li{position:relative;padding-left:15px;font-size:10.7px;line-height:1.5;color:var(--ink-2);}
+  .job li::before{content:"";position:absolute;left:0;top:7px;width:5px;height:5px;border:1px solid var(--bronze);transform:rotate(45deg);}
+
+  .side{display:flex;flex-direction:column;gap:17px;}
+  .skill .g{margin-bottom:9px;}
+  .skill .g:last-child{margin-bottom:0;}
+  .skill .gt{font-family:var(--font-sans);font-weight:600;font-size:10.5px;color:var(--ink);letter-spacing:.01em;}
+  .skill .gv{font-size:10.3px;line-height:1.5;color:var(--ink-2);margin-top:2px;}
+  .side .kv{font-size:10.6px;line-height:1.55;color:var(--ink-2);}
+  .side .kv b{color:var(--ink);font-weight:600;}
+  .linkrow{display:flex;flex-direction:column;gap:5px;}
+  .linkrow a{font-size:10.6px;color:var(--ink-2);display:flex;flex-direction:column;}
+  .linkrow a .k{font-family:var(--font-mono);font-size:8.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3);}
+  .linkrow a b{color:var(--accent);font-weight:500;}
+  .edu{display:flex;flex-direction:column;gap:11px;}
+  .ed-t{font-family:var(--font-sans);font-weight:600;font-size:10.6px;color:var(--ink);line-height:1.2;}
+  .ed-s{font-size:10.3px;color:var(--ink-2);margin-top:1px;}
+  .ed-m{font-family:var(--font-mono);font-size:8.5px;letter-spacing:.06em;color:var(--ink-3);margin-top:2px;}
+
+  .foot{margin-top:20px;padding-top:12px;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:12px;font-family:var(--font-mono);font-size:8.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-3);}
+
+  /* ---- Save as PDF (screen only) ---- */
+  .pdfbtn{position:fixed;right:20px;bottom:20px;z-index:20;font-family:var(--font-sans);font-size:13px;font-weight:600;
+    background:var(--accent);color:#F5F2EA;border:0;border-radius:100px;padding:12px 22px;cursor:pointer;
+    box-shadow:0 10px 26px -10px rgba(51,80,75,.7);transition:transform .15s;}
+  .pdfbtn:hover{transform:translateY(-2px);}
+  .pdfbtn:focus-visible{outline:2px solid var(--ink);outline-offset:3px;}
+
+  @media (max-width:720px){
+    .grid{grid-template-columns:1fr;gap:24px;}
+    .name{font-size:32px;}
+    .sheet{padding:24px 20px;min-height:0;}
+  }
+
+  @media print{
+    body{background:#fff;padding:0;}
+    .sheet{width:auto;min-height:auto;margin:0;box-shadow:none;padding:0.5in 0.55in;}
+    .grid{grid-template-columns:1.72fr 1fr;gap:30px;}
+    .no-print{display:none !important;}
+    a{color:inherit;}
+    *{-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+  }
+  @page{size:Letter;margin:0;}
+</style>
+
+<div class="sheet">
+  <!-- MASTHEAD -->
+  <header class="head">
+    <div class="name">Omar Bader</div>
+    <div class="role">UI/UX &amp; WordPress Designer &middot; Front-End Developer</div>
+    <div class="contact">
+      <span><span class="k">Location</span>Beirut, Lebanon &middot; Remote</span>
+      <a href="mailto:omar.bader.dev@gmail.com"><span class="k">Email</span>omar.bader.dev@gmail.com</a>
+      <a href="tel:+96181804577"><span class="k">Phone</span>+961 81 804 577</a>
+      <a href="https://omarbader-dev.github.io"><span class="k">Portfolio</span>omarbader-dev.github.io</a>
+      <a href="https://github.com/omarbader-dev"><span class="k">GitHub</span>github.com/omarbader-dev</a>
+    </div>
+  </header>
+
+  <div class="grid">
+    <!-- MAIN -->
+    <main>
+      <section>
+        <div class="lbl">Profile</div>
+        <p class="profile">Multidisciplinary <b>designer and developer</b> with 6+ years turning brands into clean, editable web experiences. I design identities and interfaces, then build them in <b>WordPress</b> and modern JavaScript stacks &mdash; a designer's eye paired with a developer's hands, so the finished site matches the design down to the detail. Also a freelance security researcher on HackerOne. Based in Beirut, working remotely worldwide.</p>
+      </section>
+
+      <section style="margin-top:22px;">
+        <div class="lbl">Experience</div>
+        <div class="exp">
+          <div class="job">
+            <div class="job-h">
+              <div class="job-t">UI/UX &amp; WordPress Designer &mdash; <span class="job-org">Freelance</span></div>
+              <div class="job-m">2019 &ndash; Present &middot; Remote</div>
+            </div>
+            <ul>
+              <li>Design brand identities &mdash; logos, colour systems, typography and collateral &mdash; for studios, agencies and small businesses.</li>
+              <li>Build custom, fast, editable WordPress sites (block editor &amp; Elementor) that match the design pixel-for-pixel and stay easy for a client's team to maintain.</li>
+              <li>Run projects end to end: research, wireframes, Figma design systems, front-end build and launch.</li>
+            </ul>
+          </div>
+
+          <div class="job">
+            <div class="job-h">
+              <div class="job-t">Marketing, Graphic Design &amp; Video Editor &mdash; <span class="job-org">Waqf Al Quds</span></div>
+              <div class="job-m">2024 &ndash; 2026</div>
+            </div>
+            <ul>
+              <li>Planned and ran social-media campaigns across platforms; managed pages, content calendars and community.</li>
+              <li>Designed posts, graphics and brand assets, and edited promotional &amp; social video end to end.</li>
+              <li>Owned the creative output &mdash; from concept and copy through to final design and publishing.</li>
+            </ul>
+          </div>
+
+          <div class="job">
+            <div class="job-h">
+              <div class="job-t">Security Researcher, Bug Bounty &mdash; <span class="job-org">HackerOne</span></div>
+              <div class="job-m">2021 &ndash; Present &middot; Freelance</div>
+            </div>
+            <ul>
+              <li>Independent web-application security research: identify and responsibly disclose vulnerabilities.</li>
+              <li>Test the same stacks I build in, from the attacker's side &mdash; which sharpens how I ship secure front-ends.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- SIDEBAR -->
+    <aside class="side">
+      <section class="skill">
+        <div class="lbl">Skills</div>
+        <div class="g"><div class="gt">Design</div><div class="gv">UI/UX design, brand identity, WordPress, Elementor, Figma, Adobe (Photoshop, Illustrator, Premiere), graphic design, video editing, responsive design systems.</div></div>
+        <div class="g"><div class="gt">Development</div><div class="gv">JavaScript, Python, PHP, C, Assembly &middot; HTML &amp; CSS &middot; MERN (MongoDB, Express, React, Node) &middot; MNVN (MongoDB, Nuxt, Vue, Nitro).</div></div>
+        <div class="g"><div class="gt">Databases</div><div class="gv">PostgreSQL, MySQL, MongoDB.</div></div>
+        <div class="g"><div class="gt">Security</div><div class="gv">Web-application security, vulnerability research and responsible disclosure (HackerOne).</div></div>
+      </section>
+
+      <section>
+        <div class="lbl">Languages</div>
+        <div class="kv"><b>Arabic</b> &mdash; native<br><b>English</b> &mdash; fluent</div>
+      </section>
+
+      <section>
+        <div class="lbl">Links</div>
+        <div class="linkrow">
+          <a href="https://omarbader-dev.github.io"><span class="k">Portfolio</span><b>omarbader-dev.github.io</b></a>
+          <a href="https://github.com/omarbader-dev"><span class="k">GitHub</span><b>github.com/omarbader-dev</b></a>
+        </div>
+      </section>
+
+      <section>
+        <div class="lbl">Education</div>
+        <div class="edu">
+          <div class="ed">
+            <div class="ed-t">BSc Computer Science</div>
+            <div class="ed-s">Lebanese International University</div>
+            <div class="ed-m">2023 &ndash; Present &middot; Final year</div>
+          </div>
+          <div class="ed">
+            <div class="ed-t">Information Technology</div>
+            <div class="ed-s">CIS College</div>
+            <div class="ed-m">2021 &ndash; 2022</div>
+          </div>
+        </div>
+      </section>
+    </aside>
+  </div>
+
+  <div class="foot">
+    <span>Omar Bader</span>
+    <span>UI/UX &middot; WordPress &middot; Front-End</span>
+    <span>References on request</span>
+  </div>
+</div>
+
+<button class="pdfbtn no-print" type="button" onclick="window.print()">Save as PDF</button>
